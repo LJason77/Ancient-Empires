@@ -8,6 +8,14 @@ Ancient-Empires 是塞班机上《远古帝国》的重制。
 
 此仓库是后端项目。
 
+## 部署
+
+### 数据库
+
+```shell
+docker run -d --name mongo --restart always -e MONGO_INITDB_ROOT_USERNAME=mongo -e MONGO_INITDB_ROOT_PASSWORD=mongo -v $(pw)/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js -v ~/.db/mongo:/data/db -p 27017:27017 mongo --wiredTigerCollectionBlockCompressor zlib
+```
+
 ## 许可
 
 [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
